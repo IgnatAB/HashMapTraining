@@ -14,7 +14,7 @@ public class HashMapTrain {
 
         Phones sm1 = new Phones("iphone", "3g");
         Phones sm2 = new Phones("iphone", "5");
-        //проверяем одинаковые ли hashCode?
+        //проверяем  одинаковые ли hashCode ?
         System.out.println("hashCode объекта " + sm1 + ": " + sm1.hashCode());
         System.out.println("hashCode объекта " + sm2 + ": " + sm2.hashCode());
 
