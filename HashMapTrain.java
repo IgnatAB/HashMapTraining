@@ -12,8 +12,8 @@ public class HashMapTrain {
         // Чтобы попасть в критерии изменения структуры, можем варьировать максимальное значение итератора в цикле.
         // Смотрим изменения в логах.
 
-        Phones sm1 = new Phones("iphone","3g");
-        Phones sm2 = new Phones("iphone","5");
+        Phones sm1 = new Phones("iphone", "3g");
+        Phones sm2 = new Phones("iphone", "5");
         //проверяем одинаковые ли hashCode?
         System.out.println("hashCode объекта " + sm1 + ": " + sm1.hashCode());
         System.out.println("hashCode объекта " + sm2 + ": " + sm2.hashCode());
@@ -25,8 +25,9 @@ public class HashMapTrain {
         System.out.println("Список ключей: " + priceOfSmartphones.keySet());
         System.out.println("Список значений: " + priceOfSmartphones.values());
 
+        //количество создаваемых элементов изменяем тут
         for (int i = 1; i <= 9; i++) {
-            priceOfSmartphones.put(new Phones("iphone", String.valueOf(i+5)), String.valueOf(i * 100) + "$");
+            priceOfSmartphones.put(new Phones("iphone", String.valueOf(i + 5)), String.valueOf(i * 100) + "$");
         }
         System.out.println("После добавления новых элементов наша HashMap priceOfSmartphones содержит: ");
         System.out.println(priceOfSmartphones);
@@ -39,7 +40,6 @@ public class HashMapTrain {
 
         double capacity = ((int) capacityField1.get(priceOfSmartphones)) / 0.75; //т.к. поле threshold = capacity*loadFacktor
         System.out.println("Текущая емкость HashMap: " + capacity);
-
 
 
         Field tableField = HashMap.class.getDeclaredField("table");
@@ -57,6 +57,7 @@ public class HashMapTrain {
                     System.out.println("Это обычный узел (Regular Node)");
                 } else if (nodeClass.getName().equals("java.util.HashMap$TreeNode")) {
                     System.out.println("Это дерево узел (Tree Node)");
+
                 }
             }
         }
@@ -89,6 +90,6 @@ class Phones {
 
     @Override
     public String toString() {
-        return "{"+ smartphone + " " + model + "}";
+        return "{" + smartphone + " " + model + "}";
     }
 }
